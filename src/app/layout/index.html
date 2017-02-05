@@ -1,7 +1,28 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1><b>Note:</b></h1>
+<ul>
+    <li>There are different ways to bind CSS classes to NgClass that are using string, array and object</li>
+    <li>We can assign one or more than one CSS classes to HTML element using NgClass</li>
+    <li>When we use NgClass with object then adding and removing CSS classes are performed on the basis of retuned Boolean value of an expression. If the value of expression is true then respective CSS class will be added otherwise that CSS class will be removed from HTML element at run time</li>
+</ul>
+
+<h1><b>ngClass with String</b></h1>
+<p [ngClass]="'one'">using a class with string using ngClass</p>
+<p [ngClass]="'three two'">using multiple class with string using ngClass</p>
+
+<h1><b>ngClass with Array</b></h1>
+<p [ngClass]="['one', 'two']">using ngClass with Array</p>
+
+<h1><b>ngClass with object</b></h1>
+<p [ngClass]="{ 'one': true, 'three': false }">Using ngClass with object</p>
+<ul>
+    <li template="ngFor let id of ids; let even = even">
+        <span [ngClass]="{ 'one': even, 'two': even, 'three': !even, 'four': !even }">Row {{ id }}</span>
+    </li>
+</ul>
+
+<h1><b>ngClass with component method</b></h1>
+<ul>
+    <li template="ngFor let id of ids; let even = even">
+        <span [ngClass]="getCssClasses(even)">Id = {{ id }}</span>
+    </li>
+</ul>

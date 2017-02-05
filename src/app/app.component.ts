@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './layout/index.html'
 })
 
-export class AppComponent { }
+export class AppComponent {
+    public ids = [1, 2, 3, 4, 5];
+
+    public getCssClasses(even: boolean) {
+        return even ? { 'one': true, 'two': true } : { 'three': true, 'four': true };
+    }
+}
