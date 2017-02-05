@@ -1,7 +1,36 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<b>ngIf demo</b>
+<span *ngIf="isValid">Data is valid</span>
+<span *ngIf="!isValid">Data is invalid</span>
+
+<b>ngIf with ngFor</b>
+<ul>
+    <li *ngFor="let id of ids">
+        <span *ngIf="id % 2 == 0">Number {{ id }} is even number</span>
+        <span *ngIf="id % 2 != 0">Number {{ id }} is odd number</span>
+    </li>
+</ul>
+
+<b>ngIf with Enum</b>
+<p *ngIf="numEnum.TWO > 1">{{ numEnum.TWO }} is greater than 1</p>
+<p *ngIf="numEnum.THREE < 2">{{ numEnum.THREE }} is less than 2</p>
+
+<b>ngIf null check</b>
+<ul *ngIf="employee1">
+    <li>{{ employee1.id }}</li>
+    <li>{{ employee1.name }}</li>
+</ul>
+<ul *ngIf="employee2">
+    <li>{{ employee2.id }}</li>
+    <li>{{ employee2.name }}</li>
+</ul>
+
+<b>ngIf with component Element</b>
+<employee *ngIf="employee1" [name]="employee1.name"></employee>
+
+<b>ngIf with template attribute</b>
+<employee template="ngIf:employee1" [name]="employee1.name"></employee>
+
+<b>ngIf with template tag</b>
+<template [ngIf]="employee1">
+    <employee *ngIf="employee1" [name]="employee1.name"></employee>
+</template>
