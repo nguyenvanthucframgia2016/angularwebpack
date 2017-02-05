@@ -1,7 +1,21 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1><b>1. Note</b></h1>
+<ul>
+    <li>Style binding binds an inline style property with a given value and NgStyle sets more than one inline styles dynamically</li>
+    <li>Style binding can bind only one inline CSS property at one time. When we want to use more than one style property at one time dynamically then the role of NgStyle directive</li>
+</ul>
+
+<h1>2. Style binding</h1>
+<p [style.font-size.px]="fontSize < 10 ? fontSize * 5 : fontSize">Hello World</p>
+<p [style.color]="'red'">Red Color</p>
+
+<h1>3. ngStyle demo</h1>
+<div [ngStyle]="{
+    'font-size.px': fontSize < 10 ? fontSize * 5 : fontSize,
+    'color': 'green',
+    'background': 'url(\'../src/assets/images/image.jpg\') no-repeat'
+}">ngStyle</div>
+
+<h1>4. ngStyle with component method</h1>
+<div [ngStyle]="getStyle()">
+    ngStyle component method
+</div>
