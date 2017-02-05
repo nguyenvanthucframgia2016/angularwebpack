@@ -1,7 +1,10 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Note</h1>
+<ul>
+    <li>@Input: binds a property within one component (child component) to receive a value from another component (parent component). This is one way communication from parent to child</li>
+    <li>@Output:  is used to define output property to achieve custom event binding and send data from one component (child component) to calling component (parent component). This is one way communication from child to parent component.</li>
+</ul>
+<h1>City Component</h1>
+<city-app *ngIf="cityObjects" [cityObjects]="cityObjects"></city-app>
+<student-app *ngIf="students" [studentObjects]="students" (addNumberEvent)="printResult($event)"></student-app>
+<h1>Result</h1>
+<p>{{ totalResult }}</p>

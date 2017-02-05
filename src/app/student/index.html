@@ -1,0 +1,14 @@
+<h1>Student Component</h1>
+<ul>
+    <li *ngFor="let student of studentArray">
+        <span>{{ student.id }} - {{ student.name }}</span>
+    </li>
+</ul>
+
+<h1>Form</h1>
+<span>first Number</span>
+<input type="text" class="form-control" (input)="num1=$event.target.value">
+<br>
+<span>second Number</span>
+<input type="text" class="form-control" (input)="num2=$event.target.value">
+<button class="btn btn-primary" (click)="addNumber()">Click</button>
