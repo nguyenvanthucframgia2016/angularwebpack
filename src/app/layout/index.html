@@ -1,7 +1,52 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<b>ngSwitch demo</b>
+<ul [ngSwitch]="person">
+    <li *ngSwitchCase="'A'">Hello A</li>
+    <li *ngSwitchCase="'B'">Hello B</li>
+    <li *ngSwitchDefault>Hello Default</li>
+</ul>
+
+<b>ngSwitch with ngFor and ngClass</b>
+<ul>
+    <li *ngFor="let user of users" [ngSwitch]="user.id % 2">
+        <span *ngSwitchCase="0" [ngClass]="'even'">{{ user.id }} - {{ user.name }}</span>
+        <span *ngSwitchCase="1" [ngClass]="'odd'">{{ user.id }} - {{ user.name }}</span>
+        <span *ngSwitchDefault [ngClass]="'default'">{{ user.id }} - {{ user.name }}</span>
+    </li>
+</ul>
+
+<b>ngSwitch with Enum</b>
+<ul [ngSwitch]="north">
+    <li *ngSwitchCase="dirEnum.East">East</li>
+    <li *ngSwitchCase="dirEnum.West">West</li>
+    <li *ngSwitchCase="dirEnum.North">North</li>
+    <li *ngSwitchCase="dirEnum.South">South</li>
+    <li *ngSwitchDefault>Default</li>
+</ul>
+
+<b>NgSwitch with template attribute</b>
+<ul [ngSwitch]="north">
+    <li template="ngSwitchCase:dirEnum.East">East</li>
+    <li template="ngSwitchCase:dirEnum.West">West</li>
+    <li template="ngSwitchCase:dirEnum.North">North</li>
+    <li template="ngSwitchCase:dirEnum.South">South</li>
+    <li template="ngSwitchDefault">Default</li>
+</ul>
+
+<b>ngSwitch with template tag</b>
+<ul [ngSwitch]="north">
+    <template [ngSwitchCase]="dirEnum.East">
+        <li>East</li>
+    </template>
+    <template [ngSwitchCase]="dirEnum.West">
+        <li>West</li>
+    </template>
+    <template [ngSwitchCase]="dirEnum.North">
+        <li>North</li>
+    </template>
+    <template [ngSwitchCase]="dirEnum.South">
+        <li>South</li>
+    </template>
+    <template ngSwitchDefault>
+        <li>Default</li>
+    </template>
+</ul>
