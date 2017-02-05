@@ -1,7 +1,59 @@
-<button class="btn btn-primary">
-    Primary
-</button>
+<b>*ngFor demo</b>
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.id }} - {{ user.name }} - {{ user.age }}
+    </li>
+</ul>
+
 <br>
-<alert type="success">
-    Well done!
-</alert>
+<b>*ngFor with template attribute</b>
+<ul>
+    <li template="ngFor let user of users; let i = index">
+        Row {{ i }} | {{ user.id }} - {{ user.name }} - {{ user.age }}
+    </li>
+</ul>
+
+<br>
+<b>*ngFor with first and last</b>
+<ul>
+    <li template="ngFor let user of users; let i = index; let f = first; let l = last">
+        Row {{ i }} is first {{ f }} or last {{ l }}
+    </li>
+</ul>
+
+<br>
+<b>*ngFor with even and odd</b>
+<ul>
+    <li template="ngFor let user of users; let index = index; let even = even; let odd = odd">
+        <span *ngIf="even">Row {{ index }} is even</span>
+        <span *ngIf="odd">Row {{ index }} is odd</span>
+    </li>
+</ul>
+
+<br>
+<b>ngFor with component element using *ngFor</b>
+<ul>
+    <child *ngFor="let user of users" [user] = "user"></child>
+</ul>
+
+<br>
+<b>ngFor with component element with template attribute</b>
+<ul>
+    <child template="ngFor let user of users" [user] = "user"></child>
+</ul>
+
+<br>
+<b>ngFor with component element with template tag</b>
+<ul>
+    <template ngFor let-user [ngForOf] = "users">
+        <child [user]="user"></child>
+    </template>
+</ul>
+
+<br>
+<b>*ngFor with index</b>
+<ul>
+    <li *ngFor="let user of users; let i = index">
+        Row {{ i }} : {{ user.id }} - {{ user.name }} - {{ user.age }}
+    </li>
+</ul>
