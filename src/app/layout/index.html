@@ -1,7 +1,29 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Note</h1>
+<ul>
+    <li>Pipes helps us to format or  transform data to display in our template</li>
+    <li>angular 2 built in pipes like currency pipe, date pipe, number pipe, percent pipe, decimal pipe, & slice pipe</li>
+</ul>
+
+<h1>Pipes demo</h1>
+<span>Unformatted Date:</span> {{ today }}<br>
+<span>Formatted Date:</span> {{ today | date | uppercase }}
+
+<h1>DatePipe</h1>
+<span>Syntax: <b>date_expression | date[:format]</b></span><br>
+<span><b>date_expression</b> is a date object or a numbe</span><br>
+<span><b>date</b> is the name of the pipe</span><br>
+<span><b>format</b> is the date and time format string which indicates the format in which date/time components are displayed.</span>
+
+<h1>Example DatePipe</h1>
+<p>medium : {{today | date:'medium'}} </p>
+<p>short : {{today | date:'short'}} </p>
+<p>fullDate : {{today | date:'fullDate'}} </p>
+<p>longDate : {{today | date:'longDate'}} </p>
+<p>mediumDate : {{today | date:'mediumDate'}} </p>
+<p>shortDate : {{today | date:'shortDate'}} </p>
+<p>mediumTime : {{today | date:'mediumTime'}} </p>
+<p>dd-MM-y : {{today | date:'dd-MM-y'}} </p>
+<p>yy-MM-dd : {{today | date:'yy-MM-dd' }}</p>
+<p>dd-MM-yy HH:mm : {{today | date:'dd-MM-yy HH:mm'}} </p>
+
+Reference: <a href="https://angular.io/docs/ts/latest/api/common/index/DatePipe-pipe.html">Angular DatePipe</a>
