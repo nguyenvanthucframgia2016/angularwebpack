@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './layout/index.html'
 })
 
-export class AppComponent { }
+export class AppComponent {
+    public collection: string[] = ['a', 'b', 'c', 'd'];
+    public str: string = 'abcdefghij';
+}

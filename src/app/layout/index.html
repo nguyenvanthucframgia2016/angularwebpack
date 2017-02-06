@@ -1,7 +1,27 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Note</h1>
+<ul>
+    <li>SlicePipe is used to creates a new List or String containing a subset (slice) of the string or array</li>
+</ul>
+<h1>Syntax: <b>array_or_string_expression | slice:start[:end]</b></h1>
+<ul>
+    <li><b>array_or_string_expression</b> is the string to slice</li>
+    <li><b>slice</b> is the name of the pipe</li>
+    <li><b>start</b> is the start position/index from where the slicing will start</li>
+    <li><b>end</b> is the ending index/position in the array/string</li>
+</ul>
+
+<h1>Example</h1>
+<ul>
+    <li *ngFor="let collect of collection | slice:1:-3">
+        <span>{{ collect }}</span>
+    </li>
+</ul>
+
+<p>{{str}}[0:4]: '{{str | slice:0:4}}' - output is expected to be 'abcd'</p>
+<p>{{str}}[4:0]: '{{str | slice:4:0}}' - output is expected to be ''</p>
+<p>{{str}}[-4]: '{{str | slice:-4}}' - output is expected to be 'ghij'</p>
+<p>{{str}}[-4:-2]: '{{str | slice:-4:-2}}' - output is expected to be 'gh'</p>
+<p>{{str}}[-100]: '{{str | slice:-100}}' - output is expected to be 'abcdefghij'</p>
+<p>{{str}}[100]: '{{str | slice:100}}' - output is expected to be ''</p>
+
+Reference: <a href="https://angular.io/docs/ts/latest/api/common/index/SlicePipe-pipe.html">SlicePice</a>
