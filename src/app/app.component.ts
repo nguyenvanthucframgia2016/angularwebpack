@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './layout/index.html'
 })
 
-export class AppComponent { }
+export class AppComponent {
+    public message:string = 'Uppercase and LowerCase Pipe';
+}
