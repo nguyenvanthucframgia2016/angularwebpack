@@ -1,7 +1,39 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Note:</h1>
+DecimalPipe is used to
+<ul>
+    <li>Format a number as Text</li>
+    <li>This pipe will format the number according to locale rules</li>
+</ul>
+
+<h1>Syntax</h1>
+<b>number_expression | number[:digitInfo]</b><br>
+Where
+    <pre><b>number_expression</b> is the number you want to format</pre><br>
+    <pre><b>number</b> is the name of the pipe</pre><br>
+    <pre><b>digitInfo</b> is a string which has the following format</pre><br>
+        <pre><b>minIntegerDigits.minFractionDigits-maxFractionDigits</b></pre><br>
+        Where
+            <pre><b>minIntegerDigits</b> is the minimum number of integer digits to use. Defaults to 1.</pre><br>
+            <pre><b>minFractionDigits</b> is the minimum number of digits after fraction. Defaults to 0.</pre><br>
+            <pre><b>maxFractionDigits</b> is the maximum number of digits after fraction. Defaults to 3.</pre><br>
+
+<h1>DecimalPipe demo</h1>
+
+<p>e (3.3-5): {{e | number:'3.1-5'}}</p>
+<p>pi (3.2-5): {{pi | number:'3.2-2'}}</p>
+<p>{{ num2 }}</p>
+<p>num2(3.2-5) {{ num2 | number:'3.2-5' }}</p>
+<p>num1 {{ num1 | number }}</p>
+<p>num1(3.0-4) {{ num1 | number:'3.0-4' }}</p>
+
+<h1>Note</h1>
+<pre>
+    <ul>
+        <li>Neu minFractionDigits > maxFractionDigits thi se hien thi ket qua la ''</li>
+        <li>Neu minFractionDigits > so thap phan cuoi cung sau dau . va minFractionDigits > maxFractionDigits thi se tu dong them so 0 cho den khi du minFractionDigits thi thoi</li>
+        <li>Neu minIntegerDigits < phan duong cua so thap phan thi se lay luon so thap phan.</li>
+        <li>Neu minIntegerDigits > phan duong thi se tu dong them so 0 o dang truoc cho den khi du minIntegerDigits thi thoi.</li>
+        <li>Neu so dang sau maxFractionDigits va co gia tri lon hon maxFractionDigits thi gia tri cua so thap phan o maxFractionDigits se duoc cong them 1. Nguoc lai se giu nguyen.</li>
+    </ul>
+</pre>
+<h1>Preference: <a href="https://angular.io/docs/ts/latest/api/common/index/DecimalPipe-pipe.html">DecimalPipe</a></h1>
