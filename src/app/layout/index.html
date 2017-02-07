@@ -1,7 +1,21 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Note</h1>
+<p>CurrencyPipe is used to Formats a number as currency using locale rules.</p>
+<pre>
+    Cach dung tuong tu nhu DecimalPipe
+    Syntax: number_expression | currency[:currencyCode[:symbolDisplay[:digitInfo]]]
+        currency to format a number as currency.
+
+        currencyCode is the ISO 4217 currency code, such as USD for the US dollar and EUR for the euro.
+        symbolDisplay is a boolean indicating whether to use the currency symbol or code.
+            true: use symbol (e.g. $).
+            false(default): use code (e.g. USD).
+        digitInfo See DecimalPipe for detailed description.
+    WARNING: this pipe uses the Internationalization API which is not yet available in all browsers and may require a polyfill. See Browser support for details.
+</pre>
+
+currencies = {{ currencies }} <br>
+currencies(4.2-4) {{ currencies | currency:'USD':false:'4.2-4' }} <br>
+
+a = {{ a }}
+<p>A(1.0-2): {{a | currency:'USD':false:'1.0-2'}}</p>
+<p>B: {{b | currency:'USD':true:'4.2-2'}}</p>

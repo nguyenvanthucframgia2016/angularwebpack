@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './layout/index.html'
 })
 
-export class AppComponent { }
+export class AppComponent {
+    currencies:number = 10.263782;
+    a: number = 0.259;
+    b: number = 1.3495;
+}
