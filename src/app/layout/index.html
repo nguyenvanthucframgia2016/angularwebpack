@@ -1,7 +1,18 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Note</h1>
+PercentePipe is used to
+<ul>
+    <li>Formats the given number as a percentage according to locale rules</li>
+    <li>Cu phap va cach dung tuong tu nhu DecimalPipe</li>
+</ul>
+a = {{ a }} <br>
+a(1.0-3) {{ a | percent:'1.0-3' }}<br>
+
+b = {{ b }}<br>
+b(1.1-3) {{ b | percent:'1.1-3' }}
+
+<p>B: {{c | percent:'4.3-5'}}</p>
+
+<pre>
+    Phai nhan voi 100 va sau do thuc hien binh thuong nhu DecimalPipe.
+</pre>
+Reference: <a href="https://angular.io/docs/ts/latest/api/common/index/PercentPipe-pipe.html">PercentePipe</a>
