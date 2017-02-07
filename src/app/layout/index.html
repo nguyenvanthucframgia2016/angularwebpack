@@ -1,7 +1,11 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Welcome pipe demo</h1>
+{{ name | welcome }}
+
+<h1>Pass Arguments in Custom Pipe</h1>
+{{ stringFormat | stringFormat: '-' }}
+
+<h1>Number expression with multiple arguments</h1>
+(3+5) = {{ 3 | numExpress: '+' : 5 }}
+
+<h1>Repeat pipe demo</h1>
+{{ name | repeat: 5 }}
