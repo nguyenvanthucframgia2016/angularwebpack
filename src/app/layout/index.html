@@ -1,7 +1,23 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Jsonpipe is use Converts value into JSON string</h1>
+<pre>
+    Syntax: expression | json
+</pre>
+
+<h1>JsonPipe demo</h1>
+object {{ object }}
+
+<p>object is formatted json pipe</p>
+{{ object | json }}
+
+<h1>Jsonpipe class Address</h1>
+{{ address1 | json }}
+
+<h1>Array Jsonpipe</h1>
+{{ addresses | json }}
+
+<h1>Jsonpipe Person object</h1>
+{{ person | json }}
+
+<h1>Json for person name property</h1>
+{{ person.name }}
+{{ person.name | json }}
