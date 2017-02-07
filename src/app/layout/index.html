@@ -1,7 +1,13 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Create custom pipe</h1>
+<ul>
+    <li><pre>Step 1: Create a typescript class</pre></li>
+    <li><pre>Step 2: Decorate the class using @Pipe</pre></li>
+    <li><pre>Step 3: Implement PipeTransform interface.</pre></li>
+    <li><pre>Step 4: Override transform() method</pre></li>
+    <li><pre>Step 5: Configure the class in application module with @NgModule</pre></li>
+    <li><pre>Step 6: Ready to use our custom pipe anywhere in application</pre></li>
+</ul>
+
+<h1>Custom pipe demo</h1>
+32F = {{ 32 | tempConvertor: 'C' }} C<br>
+0C = {{ 0 | tempConvertor: 'F' }} F
