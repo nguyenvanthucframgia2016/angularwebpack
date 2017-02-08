@@ -1,7 +1,10 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Syntax navigation operator</h1>
+<pre>
+    Syntax: (?.)
+    Use: Avoids exception for null and undefined values in property paths
+</pre>
+
+<h1>Demo</h1>
+<p *ngIf="personOne">{{ personOne?.firstName }}</p>
+<p>{{ personOne?.birthDay | date:'yy-MM-dd' }}</p>
+<p>{{ company?.person?.firstName }}</p>
