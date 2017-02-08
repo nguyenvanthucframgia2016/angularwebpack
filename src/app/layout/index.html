@@ -1,7 +1,37 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<div class="container">
+    <form name="form" #contactForm="ngForm" (ngSubmit)="contactForm.form.valid && onSubmit(contactForm)" novalidate>
+        <div class="form-group" [ngClass]="{'has-error': contactForm.submitted && !firstname.valid}">
+            <label for="firstname">FirstName</label>
+            <input type="text" class="form-control" name="firstname" [(ngModel)]="contact.firstname" #firstname="ngModel" required minlength="10">
+            <div *ngIf="contactForm.submitted && !firstname.valid" class="help-block">
+                <span [hidden]="!firstname.errors.required">
+                    First Name is required
+                </span>
+                <span [hidden]="!firstname.errors.minlength">
+                    First Name is >= 10 character.
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname">LastName</label>
+            <input type="text" class="form-control" name="lastname" [(ngModel)]="contact.lastname" #lastname="ngModel">
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" [(ngModel)]="contact.address.city" #city="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input type="text" class="form-control" name="street" [(ngModel)]="contact.address.street" #street="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input type="text" class="form-control" name="postcode" [(ngModel)]="contact.address.postcode" #postcode="ngModel">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
