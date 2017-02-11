@@ -1,7 +1,8 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Angular 2 service demo</h1>
+<ul *ngIf="products">
+    <li *ngFor="let product of products">
+        <span>
+            {{ product.id }} - {{ product.name }} - {{ product.price }}
+        </span>
+    </li>
+</ul>
