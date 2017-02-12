@@ -1,0 +1,30 @@
+<h1>This is list of employees</h1>
+<div *ngIf="loading">loading...</div>
+<div *ngIf="errorMessage" class="alert alert-warning">
+    <strong>Warning!</strong> {{ errorMessage }}
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>CreatedAt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.age }}</td>
+                <td>{{ employee.createdAt }}</td>
+            </tr>
+            <pagination [boundaryLinks]="true" [totalItems]="totalItems" [(ngModel)]="currentPage" class="pagination-sm" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" itemsPerPage="5"></pagination>
+            <tr *ngIf="employees && !employees.length">
+                <td colspan="4">Not Result</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

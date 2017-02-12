@@ -1,7 +1,14 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<section>
+    <h1>Welcome to Angular route demo</h1>
+    <ul class="nav nav-pills">
+        <!-- routerLinkActive se them class active -->
+        <li role="presentation"><a routerLink="" routerLinkActive="active">Home</a></li>
+        <li role="presentation"><a routerLink="employee" routerLinkActive="active">Employee list</a></li>
+    </ul>
+</section>
+<div>
+    <router-outlet></router-outlet>
+</div>
+<section>
+    Footer
+</section>
