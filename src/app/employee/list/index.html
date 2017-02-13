@@ -1,0 +1,37 @@
+<h1>List Employee</h1>
+<span *ngIf="loading">Loading</span>
+<span *ngIf="errorMessage">{{ errorMessage | json }}</span>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Date</th>
+            <th>Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>
+                {{ employee.id }}
+            </td>
+            <td>
+                {{ employee.name }}
+            </td>
+            <td>
+                {{ employee.age }}
+            </td>
+            <td>
+                {{ employee.createdAt | date: 'yyyy-MM-dd' }}
+            </td>
+            <td>
+                <a [routerLink]="['/employee/detail', employee.id]">Detail</a>
+            </td>
+        </tr>
+        <tr *ngIf="!employees || !employees.length">
+            <td colspan="4">Not Result</td>
+        </tr>
+    </tbody>
+</table>
