@@ -1,0 +1,35 @@
+<h1>List</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>createdAt</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>
+                {{ employee.id }}
+            </td>
+            <td>
+                {{ employee.name }}
+            </td>
+            <td>
+                {{ employee.age }}
+            </td>
+            <td>
+                {{ employee.createdAt | date: 'yyyy-MM-dd' }}
+            </td>
+            <td>
+                <a [routerLink]="['/employee/edit', employee.id]">Edit</a>
+            </td>
+            <td>
+                <a [routerLink]="['/employee/delete', employee.id]">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

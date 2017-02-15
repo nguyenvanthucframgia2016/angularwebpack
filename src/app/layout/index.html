@@ -1,7 +1,11 @@
-<button class="btn btn-primary">
-    Primary
-</button>
-<br>
-<alert type="success">
-    Well done!
-</alert>
+<h1>Employee Demo</h1>
+<ul>
+    <li>
+        <a [routerLink]="['employee/add']" routerLinkActive="active">Add</a>
+    </li>
+    <li>
+        <a [routerLink]="['employee/list']" routerLinkActive="active">List</a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>
